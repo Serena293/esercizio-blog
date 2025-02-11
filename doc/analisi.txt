@@ -1,0 +1,2 @@
+Post- id, categorria, titolo, cover, contenuto, tempoDiLetture
+Autore - id, nome, cognome, email, dataDiNascita, avatar

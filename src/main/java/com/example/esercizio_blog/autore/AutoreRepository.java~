@@ -1,0 +1,4 @@
+package com.example.esercizio_blog.autore;
+
+public interface AutoreRepository {
+}
