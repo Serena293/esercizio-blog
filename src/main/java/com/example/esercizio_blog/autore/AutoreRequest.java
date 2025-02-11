@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AutoreRequest {
      private String nome;
-    private String cognome;
+     private String cognome;
 }
