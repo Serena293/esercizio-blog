@@ -1,8 +1,11 @@
 package com.example.esercizio_blog.autore;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import general.CreateResponse;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +40,9 @@ public class AutoreService {
             throw new EntityNotFoundException("Autore con id " + id + " non trovato");
         }
         return autoreRepository.findById(id).get();
+    }
+
+    public Page<Autore> findAll(Pageable pageable) {
+        return autoreRepository.findAll(pageable);
     }
 }
