@@ -12,4 +12,6 @@ import lombok.NoArgsConstructor;
 public class AutoreRequest {
      private String nome;
      private String cognome;
-}
+     private String email;
+     private String dataDiNascita;
+   }
