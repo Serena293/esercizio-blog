@@ -25,9 +25,18 @@ public class AutoreController {
         return autoreService.findById(id);
     }
 
+    @PutMapping("/{id_autore}")
+    public Autore findAndUpdate(@PathVariable Long id_autore, @RequestBody Autore body){
+        return autoreService.findByIdAndUpdate(id_autore, body);
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CreateResponse save(@RequestBody AutoreRequest request) {
         return autoreService.save(request);
     }
+
+    @DeleteMapping("/{id_autore}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void findAndDelete(@PathVariable Long id_autore){autoreService.findById(id_autore);}
 }

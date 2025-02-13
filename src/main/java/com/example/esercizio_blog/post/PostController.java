@@ -3,6 +3,7 @@ package com.example.esercizio_blog.post;
 
 import general.CreateResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,8 +24,8 @@ public class PostController {
         return postService.findById(id);
     }
 
-
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public CreateResponse save(@RequestBody PostRequest request) {
         return postService.save(request);
     }

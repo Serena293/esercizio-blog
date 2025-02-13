@@ -21,7 +21,8 @@ public class Post {
     private String contenuto;
     private Integer tempoDiLetture;
 
-    @ManyToOne // Un autore può scrivere molti post
+    // Un autore può scrivere molti post
+    @ManyToOne
     @JoinColumn(name = "autore_id")
     private Autore autore;
 }

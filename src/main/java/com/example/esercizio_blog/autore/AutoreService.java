@@ -45,4 +45,14 @@ public class AutoreService {
     public Page<Autore> findAll(Pageable pageable) {
         return autoreRepository.findAll(pageable);
     }
+
+    public Autore findByIdAndUpdate(Long id_autore, Autore body) {
+        Autore found = this.findById(id_autore);
+        found.setEmail(body.getEmail());
+        found.setNome(body.getNome());
+        found.setCognome(body.getCognome());
+        found.setDataDiNascita(body.getDataDiNascita());
+        found.setAvatar(body.getAvatar());
+        return  autoreRepository.save(found);
+    }
 }

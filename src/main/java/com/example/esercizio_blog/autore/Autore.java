@@ -1,6 +1,7 @@
 package com.example.esercizio_blog.autore;
 
 import com.example.esercizio_blog.post.Post;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,7 +25,8 @@ public class Autore {
     private String dataDiNascita;
     private String avatar;
 
-
-    @OneToMany(mappedBy = "autore")  //Un post è scritto da un autore
+    //Un post è scritto da un autore
+    @JsonIgnore
+    @OneToMany(mappedBy = "autore", cascade = CascadeType.REMOVE)
     private List<Post> post = new ArrayList<>();
 }
